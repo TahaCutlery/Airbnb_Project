@@ -6,7 +6,7 @@ const methodOverride = require("method-override");
 const mongoose = require("mongoose");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
-const MONGODB_URI = "mongodb://127.0.0.1:27017/Airbnb";
+const MONGODB_URI = process.env.MONGO_URI;
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
 const userRouter = require("./routes/user.js");
@@ -27,7 +27,7 @@ async function main() {
 main();
 
 const sessionOptions = {
-    secret : "myfirstsecretcode",
+    secret : process.env.SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {
