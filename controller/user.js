@@ -1,7 +1,7 @@
 const User = require("../models/user");
 
 module.exports.signupForm = (req, res) => {
-    res.render("user/signup.ejs", { title: "SignUp/Register" });
+    res.render("user/signup.ejs", { title: 'Log In / Sign Up – Airbnb' });
 };
 
 module.exports.signupUser = async (req, res, next) => {
@@ -23,7 +23,7 @@ module.exports.signupUser = async (req, res, next) => {
 };
 
 module.exports.loginForm = (req, res) => {
-    res.render("user/login.ejs", { title: "Log In for Airbnb" });
+    res.render("user/login.ejs", { title: 'Log In – Airbnb' });
 };
 
 module.exports.loginUser = (req, res) => {

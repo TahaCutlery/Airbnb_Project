@@ -3,7 +3,7 @@ const ExpressError = require("../utils/ExpressError");
 
 module.exports.indexlisting = async (req, res) => {
     let data = await Listing.find({});
-    res.render("listing/index.ejs", { data, title: "All Hotels List" });
+    res.render("listing/index.ejs", { data, title: 'Airbnb | Holiday rentals, cabins, beach houses & more' });
 };
 
 module.exports.addListing = (req, res) => {
@@ -35,7 +35,7 @@ module.exports.showListing = async (req, res) => {
         req.flash("error", "You are trying to access that listing is does not exit!");
         res.redirect("/listing");
     } else {
-        res.render("listing/show.ejs", { data, title: "See Hotel details", API: process.env.MAP_API_KEY });
+        res.render("listing/show.ejs", { data, title: data.title + " | Airbnb", API: process.env.MAP_API_KEY });
     }
 };
 
@@ -74,5 +74,5 @@ module.exports.deleteListing = async (req, res) => {
 module.exports.searchListing = async (req, res) => {
     let { city } = req.query;
     let data = await Listing.find({ location: city });
-    res.render("listing/index.ejs", { data, title: `All Hotels List in ${city}` });
+    res.render("listing/index.ejs", { data, title: `Airbnb | ${city} - Holiday rentals, cabins, beach houses & more`});
 };

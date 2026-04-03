@@ -23,7 +23,7 @@ async function main() {
         await mongoose.connect(MONGODB_URI);
         console.log("DataBase Connected!");
     } catch(err) {
-        throw new ExpressError(500,"Internal server error");
+        throw new ExpressError(500, "Internal server error");
     }
 };
 main();
@@ -68,6 +68,7 @@ app.use((req, res, next) => {
 app.set("views", path.join(__dirname, "views"));
 app.engine("ejs", ejsMate);
 app.set("view engine", "ejs");
+app.use(express.static("public"));
 app.use(express.static("public/css"));
 app.use(express.static("public/js"));
 app.use(methodOverride("_method"));
