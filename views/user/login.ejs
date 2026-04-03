@@ -1,0 +1,24 @@
+<% layout('/layouts/boilerplate') -%>
+<main class="new-listing-page">
+    <section class="new-listing-header">
+        <h1><%= title %></h1>
+        <p>Log In in our best hotel booking app.</p>
+    </section>
+
+    <section class="new-listing-form-wrapper">
+        <form class="new-listing-form needs-validation" action="/login" method="post" novalidate>
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" name="username" class="form-control" placeholder="Enter your username" required>
+                <div class="invalid-feedback">Please enter a username.</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Psaaword</label>
+                <input type="password" name="password" class="form-control" placeholder="Enter your password" required>
+                <div class="invalid-feedback">Please enter a password.</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Log In</button>
+        </form>
+    </section>
+</main>

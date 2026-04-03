@@ -1,0 +1,27 @@
+<% layout('/layouts/boilerplate') -%>
+<main class="listing-page">
+    <section class="listing-header">
+        <h1><%= title %></h1>
+        <p class="listing-subtitle">Browse top stays crafted for comfort, style, and value.</p>
+    </section>
+
+    <% if (!data || data.length === 0) { %>
+    <div class="empty-state">No listings available yet. Try adding a new stay.</div>
+    <% } else { %>
+    <div class="listing-grid">
+        <% for (let h of data) { %>
+        <a class="card list-card" href="/listing/<%= h._id %>">
+            <div class="image-wrap">
+                <img src="<%= h.image.url %>" class="list-img" alt="<%= h.title %>">
+                <div class="price-badge">₹ <%= h.price.toLocaleString('en-IN').toString() %> / Night</div>
+            </div>
+
+            <div class="card-content">
+                <h2 class="card-title"><%= h.title %></h2>
+                <p class="card-meta">View details & book your stay</p>
+            </div>
+        </a>
+        <% } %>
+    </div>
+    <% } %>
+</main>
