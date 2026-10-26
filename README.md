@@ -3,7 +3,7 @@
 An Airbnb-style accommodation marketplace built with Node.js, Express, MongoDB, and EJS. The app lets users browse vacation stays, create and manage listings, sign up or log in, and leave rating-based reviews for properties.
 
 ## Overview
-
+ 
 This project is a full-stack web application inspired by Airbnb. It includes a listing catalog, user authentication, owner-only management actions, image uploads, geolocation-based map rendering, and review functionality.
 
 ## Features
